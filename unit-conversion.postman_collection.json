@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "915a9103-52d0-4b5b-9361-d6fc9b21eeb6",
+		"name": "unit-conversion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Convert",
+			"item": [
+				{
+					"name": "convert Fahrenheit To Celsius",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceUnit\": \"Fahrenheit\",\r\n    \"destinationUnit\": \"Celsius\",\r\n    \"value\": \"86\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/temperature/convert",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"temperature",
+								"convert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "convert Celsius To Fahrenheit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"Source Unit\": \"Celsius\",\r\n    \"Destination Unit\": \"Fahrenheit\",\r\n    \"Value\": \"30\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/temperature/convert",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"temperature",
+								"convert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "convert Metre to Yard",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Source Unit\": \"metre\",\r\n    \"Destination Unit\": \"yard\",\r\n    \"Value\": \"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/length/convert",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"length",
+								"convert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "convert Yard To Metre",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceUnit\": \"yard\",\r\n    \"destinationUnit\": \"metre\",\r\n    \"value\": \"10.936100482940674\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/length/convert",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"length",
+								"convert"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Add",
+			"item": [
+				{
+					"name": "Add By Factor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Source Unit\":\"Meter per second\",\r\n    \"Source Unit System\":\"metric\",\r\n    \"Destination Unit\":\"Foot per second\",\r\n    \"Destination Unit System\":\"imperial\",\r\n    \"Conversion Type\":\"Speed\",\r\n    \"Conversion Factor\":\"3.281\",\r\n    \"Is Expression\":false\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add by expression",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Source Unit\":\"Celsius\",\r\n    \"Source Unit System\":\"metric\",\r\n    \"Destination Unit\":\"Kelvin\",\r\n    \"Destination Unit System\":\"SI\",\r\n    \"Conversion Type\":\"Temperature\",\r\n    \"Conversion Factor\":\"i + 273.15\",\r\n    \"Is Expression\":true\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Extra",
+			"item": [
+				{
+					"name": "convert Meter per second to Foot per second",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"Source Unit\":\"Meter per second\",\r\n    \"Destination Unit\":\"foot per second\",\r\n    \"Value\": \"10\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/speed/convert",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"speed",
+								"convert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "convert Celsius To Kelvin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Source Unit\": \"Celsius\",\r\n    \"Destination Unit\": \"Kelvin\",\r\n    \"Value\": \"86\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/temperature/convert",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"temperature",
+								"convert"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
